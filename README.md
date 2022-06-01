@@ -1,2 +1,3 @@
-# e-learning
-Projet ISPM 3è Année, Tech JS
+# E-learning
+Projet ISPM 3è Année, Tech JS:
+// Documentation
