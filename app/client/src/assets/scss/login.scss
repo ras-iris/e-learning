@@ -1,0 +1,97 @@
+$bg: #010E1B;
+$primary: #2973E1;
+$text-color: #181818;
+
+.login-page {
+  background: $bg;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: hidden;
+
+  .left-side {
+    display: flex;
+    padding: 100px 170px;
+    position: relative;
+    align-items: center;
+    height: 75%;
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      color: $text-color;
+      position: relative;
+      z-index: 2;
+      
+      div {
+        font-size: 30px;
+        font-weight: normal;
+      }
+    }
+    .decoration {
+      width: 80vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .right-side {
+    width: 50%;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .input-bloc {      
+      margin-bottom: 15px;
+      position: relative;
+      input {
+        padding: 14px 20px;
+        padding-left: 40px;
+        display: block;
+        border-radius: 100px;
+        width: 300px;
+      }
+      .icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        color: $text-color;
+        opacity: .7;
+      }
+    }
+    .pwd-forget-container {
+      display: flex;
+      justify-content: center;
+    }
+    .pwd-forget {
+      text-align: center;
+      display: inline;
+      margin-bottom: 15px;
+    }
+    .btn {
+      width: 100%;
+    }
+    .divider {
+      margin: 35px 0 20px 0;
+      width: 100%;
+      height: 1px;
+      background: $primary;
+    }
+    p {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+}
