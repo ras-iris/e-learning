@@ -19,6 +19,7 @@ root.render(
         <Route path='login' element={<Login />} />
         <Route path='/' element={<App/>} />
 
+        {/* 404 Page */}
         <Route path='*' element={<Page404/>} />
       </Routes>
     </Router>
