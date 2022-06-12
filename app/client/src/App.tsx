@@ -1,6 +1,16 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 
 function App() {
+
+  const navigate = useNavigate()
+
+  // Veuillez supprimer cette commande pour eviter la redirection vers /login
+  useEffect(() => {
+    navigate('login')
+  }, [navigate])
+
   return (
     <div className="App">
       <header className="App-header">
