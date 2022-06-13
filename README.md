@@ -2,7 +2,7 @@
 
 Projet ISPM 3è Année, Tech JS:
 
-[Lien vers l'application live](kaleidoscopic-speculoos-e99daa.netlify.app)
+[Lien vers l'application live](https://kaleidoscopic-speculoos-e99daa.netlify.app)
 
 ### Membres du groupe:
 
