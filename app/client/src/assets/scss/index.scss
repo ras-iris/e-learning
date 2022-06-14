@@ -1,6 +1,4 @@
-$primary: #2973E1;
-$text-color: #181818;
-$tr: ease all .3s;
+@import "./variables.scss";
 
 * {
   box-sizing: border-box;
@@ -9,6 +7,7 @@ $tr: ease all .3s;
 body {
   font-family: "Roboto";
   margin: 0;
+  font-size: $font-size;
 }
 
 input {

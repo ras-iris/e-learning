@@ -1,0 +1,22 @@
+@import "../../assets/scss/variables.scss";
+
+.form-controller {
+  background-color: $text-color;
+  margin-bottom: 15px;
+
+  label {
+    display: none;
+  }
+
+  .message {
+    font-size: 0.8em;
+  }
+
+  .message--error {
+    color: red;
+  }
+
+  .message--hide {
+    display: none;
+  }
+}
