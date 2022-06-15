@@ -1,6 +1,4 @@
-$bg: #010E1B;
-$primary: #2973E1;
-$text-color: #181818;
+@import "./variables.scss";
 
 .login-page {
   background: $bg;
@@ -23,7 +21,7 @@ $text-color: #181818;
       color: $text-color;
       position: relative;
       z-index: 2;
-      
+
       div {
         font-size: 30px;
         font-weight: normal;
@@ -50,26 +48,6 @@ $text-color: #181818;
       font-size: 30px;
       font-weight: bold;
       margin-bottom: 30px;
-    }
-    .input-bloc {      
-      margin-bottom: 15px;
-      position: relative;
-      input {
-        padding: 14px 20px;
-        padding-left: 40px;
-        display: block;
-        border-radius: 100px;
-        width: 300px;
-      }
-      .icon {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 18px;
-        transform: translateY(-50%);
-        color: $text-color;
-        opacity: .7;
-      }
     }
     .pwd-forget-container {
       display: flex;

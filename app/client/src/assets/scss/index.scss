@@ -1,6 +1,4 @@
-$primary: #2973E1;
-$text-color: #181818;
-$tr: ease all .3s;
+@import "./variables.scss";
 
 * {
   box-sizing: border-box;
@@ -9,6 +7,7 @@ $tr: ease all .3s;
 body {
   font-family: "Roboto";
   margin: 0;
+  font-size: $font-size;
 }
 
 input {
@@ -45,25 +44,3 @@ h6 {
 }
 
 // COMMON CLASSES
-.btn {
-  padding: 14px 20px;
-  display: block;
-  border-radius: 100px;
-  background: $primary;
-  color: #fff;
-  font-size: 18px;
-  transition: $tr;
-  cursor: pointer;
-  border: 0;
-
-  &.sec {
-    background: none;
-    border: $primary 1px solid;
-  }
-
-  &:hover {
-    background: #fff;
-    color: $primary;
-    border-color: #fff;
-  }
-}
