@@ -1,37 +1,20 @@
-import React, { useState } from "react";
-
+// Import styles and decorations
 import "../../assets/scss/login.scss";
-import { Link } from "react-router-dom";
 import decoration from "../../assets/images/login-decoration.svg";
 
+// Import Icons
 import { FaUser } from "react-icons/fa";
 import { HiOutlineKey } from "react-icons/hi";
+
+// Import Components
+import { Link } from "react-router-dom";
 import TextInput from "../../components/TextInput/TextInput";
 
-type userLoginInfoType = {
-  username: string;
-  password: string;
-};
+// Import logic
+import useLoginAPI from "./useLoginAPI";
 
 const Login = () => {
-  const [userLoginInfo, setUserLoginInfo] = useState<userLoginInfoType>({
-    username: "",
-    password: "",
-  });
-
-  // put logic in different file
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("USERNAME = ", userLoginInfo.username);
-    console.log("PASSWORD = ", userLoginInfo.password);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setUserLoginInfo({ ...userLoginInfo, [name]: value });
-  };
-
+  const { userLoginInfo, handleSubmit, handleInputChange } = useLoginAPI();
   return (
     <div className="login-page">
       <div className="left-side">
