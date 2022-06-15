@@ -44,25 +44,3 @@ h6 {
 }
 
 // COMMON CLASSES
-.btn {
-  padding: 14px 20px;
-  display: block;
-  border-radius: 100px;
-  background: $primary;
-  color: #fff;
-  font-size: 18px;
-  transition: $tr;
-  cursor: pointer;
-  border: 0;
-
-  &.sec {
-    background: none;
-    border: $primary 1px solid;
-  }
-
-  &:hover {
-    background: #fff;
-    color: $primary;
-    border-color: #fff;
-  }
-}

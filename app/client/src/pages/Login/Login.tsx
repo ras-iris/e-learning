@@ -9,6 +9,8 @@ import { HiOutlineKey } from "react-icons/hi";
 // Import Components
 import { Link } from "react-router-dom";
 import TextInput from "../../components/TextInput/TextInput";
+import FormHeader from "../../components/FormHeader/FormHeader";
+import Button from "../../components/Button/Button";
 
 // Import logic
 import useLoginAPI from "./useLoginAPI";
@@ -28,8 +30,8 @@ const Login = () => {
       </div>
       <div className="right-side">
         <div className="content">
-          <h3>E-Learning | Connexion</h3>
           <form onSubmit={(e) => handleSubmit(e)}>
+            <FormHeader formHeading="Connexion" formSubHeading="" />
             <TextInput
               label="Nom d'utilisateur"
               placeHolder="Nom d'utilisateur"
@@ -55,11 +57,21 @@ const Login = () => {
                 Mot de passe oublié ?
               </Link>
             </div>
-            <button className="btn">Se connecter</button>
+            <Button
+              text="Se connecter"
+              onClick={null}
+              type="submit"
+              className=""
+            />
           </form>
           <div className="divider"></div>
           <p>Vous n'avez pas de compte ?</p>
-          <button className="btn sec">S'inscrire</button>
+          <Button
+            text="S'inscrire"
+            onClick={() => console.log("inscription")}
+            type="button"
+            className="sec"
+          />
         </div>
       </div>
     </div>
