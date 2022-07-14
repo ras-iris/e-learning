@@ -32,49 +32,24 @@ const ResetPwd = () => {
           <form onSubmit={(e) => handleSubmit(e)}>
             <FormHeader formHeading="Connexion" formSubHeading="" />
             <TextInput
-              label="E-mail"
-              placeHolder="Adresse email"
-              errorMessage="L'adresse saisie n'existe pas"
-              name="email"
-              InputIcon={MdOutlineMailOutline}
-              handler={handleInputChange}
-              value={userLoginInfo.username}
-              type="text"
-            />
-            <TextInput
               label="Mot de passe"
-              placeHolder="Nouveau mot de passe"
-              errorMessage="Le mot de passe est trop court"
+              placeHolder="Code de confirmation"
+              errorMessage=""
               name="password"
               InputIcon={HiOutlineKey}
               handler={handleInputChange}
               value={userLoginInfo.password}
               type="password"
             />
-            <TextInput
-              label="Mot de passe"
-              placeHolder="Confirmer mot de passe"
-              errorMessage="Le mot de passe est incorrecte"
-              name="password"
-              InputIcon={HiOutlineKey}
-              handler={handleInputChange}
-              value={userLoginInfo.password}
-              type="password"
-            />
-           <Link to="../confirmation"> <Button
-              text="Continue"
+
+           <Link to="" /> <Button
+              text="Confirmer"
               onClick={null}
               type="submit"
               className=""
-            /></Link>
+            />
           </form>
-          <div className="divider"></div>
-          <Link to="../login"><Button
-            text="Se connecter"
-            onClick={() => null }
-            type="button"
-            className="sec"
-          /></Link>
+          
 
         </div>
       </div>

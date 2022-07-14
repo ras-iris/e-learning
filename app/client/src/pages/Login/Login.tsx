@@ -66,12 +66,13 @@ const Login = () => {
           </form>
           <div className="divider"></div>
           <p>Vous n'avez pas de compte ?</p>
-          <Button
+          <Link to="/Signup"><Button
             text="S'inscrire"
-            onClick={() => console.log("inscription")}
+            onClick={() => null }
             type="button"
             className="sec"
-          />
+          /> </Link> 
+          
         </div>
       </div>
     </div>
