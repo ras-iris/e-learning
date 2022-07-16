@@ -1,5 +1,5 @@
 // Import styles and decorations
-import "../../assets/scss/login.scss";
+import "../../assets/scss/exterior.scss";
 import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Icons
@@ -18,7 +18,7 @@ import useLoginAPI from "./useLoginAPI";
 const Login = () => {
   const { userLoginInfo, handleSubmit, handleInputChange } = useLoginAPI();
   return (
-    <div className="login-page">
+    <div className="exterior-page login-page">
       <div className="left-side">
         <h1>
           <div>Tech JS</div>

@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-.login-page {
+.exterior-page {
   background: $bg;
   color: #fff;
   display: flex;
@@ -15,6 +15,7 @@
     position: relative;
     align-items: center;
     height: 75%;
+
     h1 {
       font-size: 50px;
       font-weight: bold;
@@ -27,12 +28,14 @@
         font-weight: normal;
       }
     }
+
     .decoration {
       width: 80vh;
       position: absolute;
       left: 0;
       top: 0;
       object-fit: cover;
+
       img {
         width: 100%;
       }
@@ -40,36 +43,69 @@
   }
 
   .right-side {
-    width: 50%;
-    padding-top: 70px;
+    height: 80vh;
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding-top: 0;
+    width: 60%;
+
     h3 {
       font-size: 30px;
       font-weight: bold;
       margin-bottom: 30px;
     }
+
     .pwd-forget-container {
       display: flex;
       justify-content: center;
     }
+
     .pwd-forget {
       text-align: center;
       display: inline;
       margin-bottom: 15px;
     }
+
     .btn {
       width: 100%;
     }
+
     .divider {
       margin: 35px 0 20px 0;
       width: 100%;
       height: 1px;
       background: $primary;
     }
+
     p {
       text-align: center;
       margin: 20px 0;
+    }
+  }
+}
+
+// Password recovery
+.reset-page {
+  .right-side {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    width: 60%;
+  }
+
+  .content {
+    text-align: center;
+
+    .input-bloc {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .submit {
+      width: 300px;
+      margin: 0 auto;
     }
   }
 }
