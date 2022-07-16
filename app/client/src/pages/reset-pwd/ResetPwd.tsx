@@ -2,7 +2,6 @@ import "../../assets/scss/exterior.scss";
 import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Components
-import { Link } from "react-router-dom";
 import TextInput from "../../components/TextInput/TextInput";
 import FormHeader from "../../components/FormHeader/FormHeader";
 import Button from "../../components/Button/Button";
