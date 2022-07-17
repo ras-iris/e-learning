@@ -3,8 +3,7 @@ import "../../assets/scss/exterior.scss";
 import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Icons
-import { FaUser } from "react-icons/fa";
-import { HiOutlineKey } from "react-icons/hi";
+import { FaKey, FaUser } from "react-icons/fa";
 
 // Import Components
 import { Link } from "react-router-dom";
@@ -47,7 +46,7 @@ const Login = () => {
               placeHolder="Mot de passe"
               errorMessage="Le mot de passe est incorrecte"
               name="password"
-              InputIcon={HiOutlineKey}
+              InputIcon={FaKey}
               handler={handleInputChange}
               value={userLoginInfo.password}
               type="password"

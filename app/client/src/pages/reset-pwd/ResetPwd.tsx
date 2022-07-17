@@ -2,14 +2,15 @@ import "../../assets/scss/exterior.scss";
 import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Components
-import TextInput from "../../components/TextInput/TextInput";
 import FormHeader from "../../components/FormHeader/FormHeader";
-import Button from "../../components/Button/Button";
-import { FaEnvelope } from "react-icons/fa";
-import { useState } from "react";
+
+// React Step Wizard
+import StepWizard from "react-step-wizard";
+import ResetStep1 from "./Reset-step1";
+import ResetStep2 from "./Reset-step2";
+import ResetStep3 from "./Reset-step3";
 
 const ResetPwd = () => {
-  const [email, setEmail] = useState("")
 
   return (
     <div className="exterior-page reset-page">
@@ -26,24 +27,12 @@ const ResetPwd = () => {
         <div className="content">
           <form onSubmit={(e) => e.preventDefault()}>
             <FormHeader formHeading="Récupération de mot de passe" formSubHeading="" />
-            <p className="tip">Entrer votre adresse email et nous allons vous envoyer <br /> les instructions pour renouveller votre mot de passe.</p>
-            <TextInput
-              label="Nom d'utilisateur"
-              placeHolder="Adresse email"
-              errorMessage="Adresse email non trouvé"
-              name="email"
-              InputIcon={FaEnvelope}
-              handler={setEmail}
-              value={email}
-              type="email"
-            />
+            <StepWizard className="wizard" >
+              <ResetStep1 nextStep /> 
+              <ResetStep2 nextStep />
+              <ResetStep3 />
+            </StepWizard>
           </form>
-          <Button
-            text="Envoyer"
-            onClick={() => console.log("inscription")}
-            type="button"
-            className="submit"
-          />
         </div>
       </div>
     </div>
