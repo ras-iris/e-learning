@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./assets/scss/index.scss";
 
 import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup";
 import ResetPwd from "./pages/reset-pwd/ResetPwd";
 import Page404 from "./pages/Page404";
+import Signup from "./pages/signup/Signup";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

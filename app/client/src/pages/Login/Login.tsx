@@ -6,7 +6,7 @@ import decoration from "../../assets/images/login-decoration.svg";
 import { FaKey, FaUser } from "react-icons/fa";
 
 // Import Components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../components/TextInput/TextInput";
 import FormHeader from "../../components/FormHeader/FormHeader";
 import Button from "../../components/Button/Button";
@@ -15,6 +15,7 @@ import Button from "../../components/Button/Button";
 import useLoginAPI from "./useLoginAPI";
 
 const Login = () => {
+  const nav = useNavigate()
   const { userLoginInfo, handleSubmit, handleInputChange } = useLoginAPI();
   return (
     <div className="exterior-page login-page">
@@ -67,7 +68,7 @@ const Login = () => {
           <p>Vous n'avez pas de compte ?</p>
           <Button
             text="S'inscrire"
-            onClick={() => console.log("inscription")}
+            onClick={() => nav('/signup')}
             type="button"
             className="sec"
           />
