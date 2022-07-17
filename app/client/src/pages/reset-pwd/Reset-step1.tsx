@@ -7,11 +7,11 @@ const ResetStep1 = ({ nextStep }: { nextStep: any }) => {
   const [email, setEmail] = useState("")
   return (
     <div className="exterior-step">
-      <p className="tip">Entrer votre adresse email et nous allons vous envoyer <br /> les instructions pour renouveller votre mot de passe.</p>
+      <p className="tip">Entrez l'adresse email de votre compte.</p>
       <TextInput
         label="Nom d'utilisateur"
         placeHolder="Adresse email"
-        errorMessage="Adresse email non trouvé"
+        errorMessage="Compte non trouvé"
         name="email"
         InputIcon={FaEnvelope}
         handler={setEmail}
