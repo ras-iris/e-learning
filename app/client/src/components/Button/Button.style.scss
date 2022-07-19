@@ -1,4 +1,4 @@
-@import '../../assets/scss/variables.scss';
+@import "../../assets/scss/variables.scss";
 
 .btn {
   padding: 14px 20px;
@@ -13,25 +13,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &.purple {
+
+  &.btn--purple {
     background: $purple;
-    &:hover {
-      color: $purple;
-    }
+    color: $secondary;
   }
 
   svg {
     margin-right: 12px;
   }
 
-  &.sec {
-    background: none;
+  &.btn--secondary {
+    background: $primary-dark;
     border: $primary 1px solid;
   }
 
   &:hover {
-    background: #fff;
-    color: $primary;
-    border-color: #fff;
+    background: $secondary;
+    color: $primary-dark;
+    border-color: $secondary;
+    font-size: 1.05;
   }
 }
