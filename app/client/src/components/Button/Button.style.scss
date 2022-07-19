@@ -20,7 +20,7 @@
   }
 
   svg {
-    margin-right: 12px;
+    margin: 0 12px;
   }
 
   &.btn--secondary {
@@ -33,5 +33,6 @@
     color: $primary-dark;
     border-color: $secondary;
     font-size: 1.05;
+    transition: 0.25s ease-in;
   }
 }
