@@ -1,8 +1,8 @@
 @import "./variables.scss";
 
 .exterior-page {
-  background: $bg;
-  color: #fff;
+  background: $primary-dark;
+  color: $white;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -51,12 +51,12 @@
     padding-top: 0;
     width: 60%;
 
-    h3 {
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+    // h3 {
+    //   font-size: 30px;
+    //   font-weight: bold;
+    //   margin-bottom: 30px;
+    //   text-align: center;
+    // }
 
     .pwd-forget-container {
       display: flex;
@@ -97,7 +97,7 @@
     flex-direction: column;
     justify-content: flex-start;
     .divider {
-      margin: 20px 0  ;
+      margin: 20px 0;
     }
     h4 {
       font-size: 16px;
@@ -154,7 +154,7 @@
   .step {
     width: 25px;
     height: 8px;
-    background: #7D7D7D;
+    background: #7d7d7d;
     margin-right: 10px;
     border-radius: 50px;
     &.active {
