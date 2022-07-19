@@ -1,0 +1,165 @@
+@import "./variables.scss";
+
+.exterior-page {
+  background: $bg;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: hidden;
+
+  .left-side {
+    display: flex;
+    padding: 100px 170px;
+    position: relative;
+    align-items: center;
+    height: 75%;
+    z-index: 2;
+
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      color: $text-color;
+      position: relative;
+      z-index: 2;
+
+      div {
+        font-size: 30px;
+        font-weight: normal;
+      }
+    }
+
+    .decoration {
+      width: 80vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .right-side {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    width: 60%;
+
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .pwd-forget-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .pwd-forget {
+      text-align: center;
+      display: inline;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .divider {
+      margin: 20px 0;
+      width: 100%;
+      height: 1px;
+      background: $primary;
+    }
+
+    p {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+
+  .wizard {
+    width: 100%;
+  }
+
+  .exterior-step {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    .divider {
+      margin: 20px 0  ;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// Password recovery
+.reset-page {
+  .right-side {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    width: 60%;
+  }
+
+  .content {
+    text-align: center;
+
+    .input-bloc {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .submit {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Signup
+.signup-page {
+  .right-side {
+    height: 100vh;
+  }
+  .exterior-step {
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .step {
+    width: 25px;
+    height: 8px;
+    background: #7D7D7D;
+    margin-right: 10px;
+    border-radius: 50px;
+    &.active {
+      background: $primary;
+      cursor: pointer;
+    }
+  }
+}

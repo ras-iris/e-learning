@@ -1,13 +1,12 @@
 // Import styles and decorations
-import "../../assets/scss/login.scss";
+import "../../assets/scss/exterior.scss";
 import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Icons
-import { FaUser } from "react-icons/fa";
-import { HiOutlineKey } from "react-icons/hi";
+import { FaKey, FaUser } from "react-icons/fa";
 
 // Import Components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../components/TextInput/TextInput";
 import FormHeader from "../../components/FormHeader/FormHeader";
 import Button from "../../components/Button/Button";
@@ -16,9 +15,10 @@ import Button from "../../components/Button/Button";
 import useLoginAPI from "./useLoginAPI";
 
 const Login = () => {
+  const nav = useNavigate()
   const { userLoginInfo, handleSubmit, handleInputChange } = useLoginAPI();
   return (
-    <div className="login-page">
+    <div className="exterior-page login-page">
       <div className="left-side">
         <h1>
           <div>Tech JS</div>
@@ -47,7 +47,7 @@ const Login = () => {
               placeHolder="Mot de passe"
               errorMessage="Le mot de passe est incorrecte"
               name="password"
-              InputIcon={HiOutlineKey}
+              InputIcon={FaKey}
               handler={handleInputChange}
               value={userLoginInfo.password}
               type="password"
@@ -68,7 +68,7 @@ const Login = () => {
           <p>Vous n'avez pas de compte ?</p>
           <Button
             text="S'inscrire"
-            onClick={() => console.log("inscription")}
+            onClick={() => nav('/signup')}
             type="button"
             className="sec"
           />

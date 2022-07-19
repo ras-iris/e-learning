@@ -1,4 +1,3 @@
-import React from "react";
 import { IconType } from "react-icons";
 
 import "./TextInput.style.scss";
@@ -29,7 +28,7 @@ const TextInput = ({
       <label>{label}</label>
       <div className="input-bloc">
         <input
-          onChange={(e) => handler(e)}
+          onChange={(e) => handler(e.target.value)}
           name={name}
           placeholder={placeHolder}
           value={value}
