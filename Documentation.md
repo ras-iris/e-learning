@@ -4,56 +4,61 @@
 
 Props:
 
-    TextInputProps = {
-      label: string;
-      name: string;
-      placeHolder: string;
-      errorMessage: string;
-      InputIcon: IconType; // react-icons
-      value: string;
-      type: string;
-      handler: Function;
-    }
+```jsx
+<TextInput
+  errorMessage?: string;
+  handler: Function;
+  name: string;
+  placeHolder: string;
+  Icon: IconType; // react-icons
+  value: string;
+  type: string;
+/>
+```
 
 Exemple:
 
-    <TextInput
-      label="Nom d'utilisateur"
-      placeHolder="Nom d'utilisateur"
-      errorMessage="Le nom d'utilisateur saisie n'existe pas"
-      name="username"
-      InputIcon={FaUser}
-      handler={handleInputChange}
-      value={userLoginInfo.username}
-      type="text"
-    />
+```jsx
+<TextInput
+  errorMessage="Le nom d'utilisateur saisie n'existe pas"
+  handler={handleInputChange}
+  placeHolder="Nom d'utilisateur"
+  name="username"
+  Icon={FaUser}
+  value={userLoginInfo.username}
+  type="text"
+/>
+```
 
 ## Button
 
 Props:
 
-    <Button
-      text: string;
-      type: "button" | "submit" | "reset" | undefined;
-      className: string;
-      onClick: Function | null;
-    />
+```jsx
+<Button
+  Icon?: IconType;
+  iconPosition?: "left" | "right";
+  onClick: Function | null;
+  text: string;
+  type?: "button" | "submit" | "reset"
+  variant?: "primary" | "secondary" | "purple"
+/>
+```
 
 Exemple:
 
-    <Button
-      text="Se connecter"
-      onClick={null}
-      type="submit"
-      className=""
-    />
+```jsx
+<Button Icon={FaGoogle} text="Se connecter avec Google" onClick={null} />
+```
 
 ## useLoginAPI
 
 handle form, inputs events
 
-        return {
-            userLoginInfo: userLoginInfoType,
-            handleSubmit: Funtion(e: React.FormEvent<HTMLFormElement>),
-            handleInputChange: Function (e: React.ChangeEvent<HTMLInputElement>)
-        }
+```ts
+return {
+  userLoginInfo: userLoginInfoType,
+  handleSubmit: Funtion(e: ReFormEvent<HTMLFormElement>):void,
+  handleInputChange: Function (e: ReChangeEvent<HTMLInputElement>):void
+}
+```
