@@ -1,7 +1,11 @@
 @import "./variables.scss";
 
+// GLOBAL STYLES
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -10,37 +14,65 @@ body {
   font-size: $font-size;
 }
 
-input {
-  font-family: "Roboto";
-  border: none;
-  font-size: 16px;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
 button {
   display: flex;
 }
 
 a {
-  color: #fff;
+  color: $primary;
   font-weight: 400;
   text-decoration: none;
 
   &:hover {
+    color: $secondary;
     text-decoration: underline;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+// TYPO BEGIN
+
+h1 {
+  font-size: 2.488rem;
+  letter-spacing: -3%;
+  // line-height: 3.2;
+  // text-transform: capitalize;
 }
 
-// COMMON CLASSES
+h2 {
+  font-size: 2.074rem;
+  letter-spacing: -3%;
+  line-height: 2.4;
+  // text-transform: capitalize;
+}
+
+h3 {
+  font-size: 1.728rem;
+  line-height: 2.4;
+  // text-transform: capitalize;
+}
+
+h4 {
+  font-size: 1.44rem;
+  line-height: 1.6;
+  // text-transform: capitalize;
+}
+
+p {
+  font-size: 1rem;
+  word-spacing: 0.16rem;
+}
+
+p.large {
+  font-size: 1.2rem;
+}
+
+p.small {
+  font-size: 0.833rem;
+}
+
+// TYPO END
+
+.form__subheading {
+  text-align: center;
+  width: 100%;
+}

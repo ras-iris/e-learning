@@ -1,40 +1,53 @@
 import Button from "../../components/Button/Button";
-import { FaGraduationCap } from "react-icons/fa";
-import { useState } from "react";
-import Selector from "../../components/Selector/Selector";
+import TextInput from "../../components/TextInput/TextInput";
 
-const SignupStep2 = ({ nextStep }: { nextStep: any }) => {
-  const [mention, setMention] = useState("")
-  const [Filiere, setFiliere] = useState("")
+import { FaKey, FaArrowRight } from "react-icons/fa";
+
+import { SignUpInfoInterface } from "../../@types/userSignUpInfo";
+
+type SignUpStep2Props = {
+  signUpInfo: SignUpInfoInterface;
+  handler: Function;
+  handleSubmit: Function;
+};
+
+const SignupStep2 = ({
+  signUpInfo,
+  handler,
+  handleSubmit,
+}: SignUpStep2Props) => {
   return (
     <div className="exterior-step">
-      <p>Choisissez votre filière</p>
-      <Selector
-        label="Mention :"
-        name="mention-select"
-        LabelIcon={<FaGraduationCap />}
-        handler={setMention}
-        placeHolder={"Informatique"}
-        value={mention}
+      <div className="divider"></div>
+      <p className="tip">Entrer votre nouveau mot de passe.</p>
+      <TextInput
+        placeHolder="Nouveau mot de passe"
+        errorMessage=""
+        name="password"
+        Icon={FaKey}
+        handler={handler}
+        value={signUpInfo.password}
+        type="password"
       />
-  
-      <Selector
-        label="Filière :"
-        name="mention-select"
-        LabelIcon={<FaGraduationCap />}
-        handler={setFiliere}
-        placeHolder={"Informatique"}
-        value={Filiere}
+      <TextInput
+        placeHolder="Confirmer le mot de passe"
+        errorMessage=""
+        name="passwordConfirmation"
+        Icon={FaKey}
+        handler={handler}
+        value={signUpInfo.passwordConfirmation}
+        type="password"
       />
 
       <Button
-        className="submit"
-        onClick={nextStep}
-        text="Suivant"
-        type="button"
+        onClick={handleSubmit}
+        text="Inscription"
+        Icon={FaArrowRight}
+        iconPosition="right"
+        type="submit"
       />
     </div>
-  )
-}
+  );
+};
 
-export default SignupStep2
+export default SignupStep2;

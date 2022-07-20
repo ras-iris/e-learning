@@ -1,64 +1,64 @@
 import Button from "../../components/Button/Button";
-import { FaEnvelope, FaUserAlt } from "react-icons/fa";
+import { FaEnvelope, FaUserAlt, FaGoogle, FaArrowRight } from "react-icons/fa";
 import TextInput from "../../components/TextInput/TextInput";
-import { useState } from "react";
+import { SignUpInfoInterface } from "../../@types/userSignUpInfo";
 
-const SignupStep1 = ({ nextStep }: { nextStep: any }) => {
-  const [email, setEmail] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [firstName, setFirstName] = useState("")
+type SignUpStep1Props = {
+  nextStep: any;
+  signUpInfo: SignUpInfoInterface;
+  handler: Function;
+};
+
+const SignupStep1 = ({ nextStep, signUpInfo, handler }: SignUpStep1Props) => {
   return (
     <div className="exterior-step">
-      {/* <Button
-       text="S'inscrire avec Google"
-       type="button"
-       className="submit purple"
-       onClick={null}
-       icon={ <FaGoogle /> }
-      /> 
+      <Button
+        text="Continuer avec Google"
+        Icon={FaGoogle}
+        onClick={null}
+        variant="purple"
+      />
 
-      <div className="divider"></div>*/}
-
-      <h4>Informations sur vous</h4>
-
+      <div className="divider"></div>
+      <p>Information sur vous</p>
       <TextInput
-        label="Nom"
         placeHolder="Nom"
         errorMessage=""
-        name="user-last-name"
-        InputIcon={FaUserAlt}
-        handler={setLastName}
-        value={lastName}
+        name="lname"
+        Icon={FaUserAlt}
+        handler={handler}
+        value={signUpInfo.lname}
         type="text"
+        required={true}
       />
       <TextInput
-        label="Nom"
         placeHolder="Prénom"
         errorMessage=""
-        name="user-first-name"
-        InputIcon={FaUserAlt}
-        handler={setFirstName}
-        value={firstName}
+        name="fname"
+        Icon={FaUserAlt}
+        handler={handler}
+        value={signUpInfo.fname}
         type="text"
+        required={true}
       />
       <TextInput
-        label="Nom d'utilisateur"
         placeHolder="Adresse email"
         errorMessage="Compte non trouvé"
         name="email"
-        InputIcon={FaEnvelope}
-        handler={setEmail}
-        value={email}
+        Icon={FaEnvelope}
+        handler={handler}
+        value={signUpInfo.email}
         type="email"
+        required={true}
       />
       <Button
-        text="Choisir une filière"
+        text="Créer un mot de passe"
         onClick={nextStep}
-        type="button"
-        className="submit"
+        Icon={FaArrowRight}
+        iconPosition="right"
       />
     </div>
-  )
-}
+  );
+};
 
-export default SignupStep1
+export default SignupStep1;
