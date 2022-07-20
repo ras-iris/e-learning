@@ -1,4 +1,3 @@
-import React from "react";
 import { IconType } from "react-icons";
 import { FaExclamationTriangle } from "react-icons/fa";
 
@@ -10,6 +9,8 @@ type TextInputProps = {
   Icon: IconType;
   name: string;
   placeHolder: string;
+  required?: boolean;
+  ref?: any;
   type: string;
   value: string;
 };
@@ -20,9 +21,13 @@ const TextInput = ({
   Icon,
   name,
   placeHolder,
+  required,
+  ref,
   type,
   value,
 }: TextInputProps) => {
+  // required default value
+  required = required ? required : false;
   return (
     <div className="form-controller">
       <div className="form-controller__text-input">
@@ -33,10 +38,11 @@ const TextInput = ({
           placeholder={placeHolder}
           value={value}
           type={type}
+          required={required}
         />
       </div>
       {errorMessage && (
-        <span className="message message--error message--hide">
+        <span ref={ref} className="message message--error message--hide">
           <FaExclamationTriangle />
           {errorMessage}
         </span>

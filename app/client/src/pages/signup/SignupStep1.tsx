@@ -1,12 +1,15 @@
 import Button from "../../components/Button/Button";
 import { FaEnvelope, FaUserAlt, FaGoogle, FaArrowRight } from "react-icons/fa";
 import TextInput from "../../components/TextInput/TextInput";
-import { useState } from "react";
+import { SignUpInfoInterface } from "../../@types/userSignUpInfo";
 
-const SignupStep1 = ({ nextStep }: { nextStep: any }) => {
-  const [email, setEmail] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [firstName, setFirstName] = useState("");
+type SignUpStep1Props = {
+  nextStep: any;
+  signUpInfo: SignUpInfoInterface;
+  handler: Function;
+};
+
+const SignupStep1 = ({ nextStep, signUpInfo, handler }: SignUpStep1Props) => {
   return (
     <div className="exterior-step">
       <Button
@@ -21,29 +24,32 @@ const SignupStep1 = ({ nextStep }: { nextStep: any }) => {
       <TextInput
         placeHolder="Nom"
         errorMessage=""
-        name="user-last-name"
+        name="lname"
         Icon={FaUserAlt}
-        handler={setLastName}
-        value={lastName}
+        handler={handler}
+        value={signUpInfo.lname}
         type="text"
+        required={true}
       />
       <TextInput
         placeHolder="Prénom"
         errorMessage=""
-        name="user-first-name"
+        name="fname"
         Icon={FaUserAlt}
-        handler={setFirstName}
-        value={firstName}
+        handler={handler}
+        value={signUpInfo.fname}
         type="text"
+        required={true}
       />
       <TextInput
         placeHolder="Adresse email"
         errorMessage="Compte non trouvé"
         name="email"
         Icon={FaEnvelope}
-        handler={setEmail}
-        value={email}
+        handler={handler}
+        value={signUpInfo.email}
         type="email"
+        required={true}
       />
       <Button
         text="Créer un mot de passe"

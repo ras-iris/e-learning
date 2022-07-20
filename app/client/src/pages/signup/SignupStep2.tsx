@@ -1,13 +1,21 @@
-import { useState } from "react";
-
 import Button from "../../components/Button/Button";
 import TextInput from "../../components/TextInput/TextInput";
 
 import { FaKey, FaArrowRight } from "react-icons/fa";
 
-const SignupStep2 = ({ nextStep }: { nextStep: any }) => {
-  const [newPwd, setNewPwd] = useState("");
-  const [confirmPwd, setConfirmPwd] = useState("");
+import { SignUpInfoInterface } from "../../@types/userSignUpInfo";
+
+type SignUpStep2Props = {
+  signUpInfo: SignUpInfoInterface;
+  handler: Function;
+  handleSubmit: Function;
+};
+
+const SignupStep2 = ({
+  signUpInfo,
+  handler,
+  handleSubmit,
+}: SignUpStep2Props) => {
   return (
     <div className="exterior-step">
       <div className="divider"></div>
@@ -15,27 +23,28 @@ const SignupStep2 = ({ nextStep }: { nextStep: any }) => {
       <TextInput
         placeHolder="Nouveau mot de passe"
         errorMessage=""
-        name="new-pwd"
+        name="password"
         Icon={FaKey}
-        handler={setNewPwd}
-        value={newPwd}
+        handler={handler}
+        value={signUpInfo.password}
         type="password"
       />
       <TextInput
         placeHolder="Confirmer le mot de passe"
         errorMessage=""
-        name="confirm-pwd"
+        name="passwordConfirmation"
         Icon={FaKey}
-        handler={setConfirmPwd}
-        value={confirmPwd}
+        handler={handler}
+        value={signUpInfo.passwordConfirmation}
         type="password"
       />
 
       <Button
-        onClick={nextStep}
+        onClick={handleSubmit}
         text="Inscription"
         Icon={FaArrowRight}
         iconPosition="right"
+        type="submit"
       />
     </div>
   );

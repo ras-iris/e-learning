@@ -12,7 +12,14 @@ import { useNavigate } from "react-router-dom";
 import SignupStep2 from "./SignupStep2";
 import { useState } from "react";
 
+// import logic
+import useSignupAPI from "./useSignupAPI";
+
 const Signup = () => {
+  // input and submit handler
+  const { signUpInfo, handleInputChange, handleSubmit } = useSignupAPI();
+
+  // react step wizard
   const nav = useNavigate();
 
   const [wizard, setWizard] = useState<any>();
@@ -31,13 +38,22 @@ const Signup = () => {
               instance={setWizard}
               onStepChange={(e) => setActiveStep(e.activeStep)}
             >
-              <SignupStep1 nextStep />
-              <SignupStep2 nextStep />
+              <SignupStep1
+                nextStep
+                signUpInfo={signUpInfo}
+                handler={handleInputChange}
+              />
+              <SignupStep2
+                signUpInfo={signUpInfo}
+                handler={handleInputChange}
+                handleSubmit={handleSubmit}
+              />
               {/* <SignupStep3 /> */}
             </StepWizard>
             <div className="dots">
               {[...Array(wizard?.totalSteps)].map((e, i) => (
                 <div
+                  key={i}
                   className={
                     "step " +
                     (i === activeStep - 1 || i < activeStep ? "active " : "")

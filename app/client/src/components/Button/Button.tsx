@@ -67,7 +67,7 @@ const Button = ({
     <button
       type={type}
       className={setUpClassName()}
-      onClick={() => onClick?.()}
+      onClick={type === "submit" ? (e) => onClick?.(e) : () => onClick?.()}
     >
       <BtnContents />
     </button>
