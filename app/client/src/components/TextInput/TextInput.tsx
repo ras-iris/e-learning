@@ -1,43 +1,48 @@
+import React from "react";
 import { IconType } from "react-icons";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 import "./TextInput.style.scss";
 
 type TextInputProps = {
-  label: string;
+  errorMessage?: string;
+  handler: Function;
+  InputIcon: IconType;
   name: string;
   placeHolder: string;
-  errorMessage: string;
-  InputIcon: IconType;
-  value: string;
   type: string;
-  handler: Function;
+  value: string;
 };
 
 const TextInput = ({
-  label,
+  errorMessage,
+  handler,
+  InputIcon,
   name,
   placeHolder,
-  errorMessage,
-  InputIcon,
-  value,
   type,
-  handler,
+  value,
 }: TextInputProps) => {
+  const toggleLabel = (e: any) => {
+    console.log(e);
+  };
+
   return (
     <div className="form-controller">
-      <label>{label}</label>
-      <div className="input-bloc">
+      <div className="form-controller__text-input">
+        {<InputIcon className="icon" />}
         <input
-          onChange={(e) => handler(e.target.value)}
+          onChange={(e) => handler(e)}
           name={name}
           placeholder={placeHolder}
           value={value}
           type={type}
+          onFocus={(e) => toggleLabel(e)}
         />
-        {<InputIcon className="icon" />}
       </div>
       {errorMessage && (
         <span className="message message--error message--hide">
+          <FaExclamationTriangle />
           {errorMessage}
         </span>
       )}
