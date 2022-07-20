@@ -13,6 +13,8 @@ Props:
   Icon: IconType; // react-icons
   value: string;
   type: string;
+  required?: boolean
+  ref?: any // react ref
 />
 ```
 
