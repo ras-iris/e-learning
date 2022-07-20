@@ -5,7 +5,7 @@ type ButtonProps = {
   Icon?: IconType;
   iconPosition?: "left" | "right";
   onClick: Function | null;
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset";
   text: string;
   variant?: "primary" | "secondary" | "purple";
 };

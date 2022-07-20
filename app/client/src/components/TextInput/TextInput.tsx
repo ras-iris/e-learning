@@ -7,7 +7,7 @@ import "./TextInput.style.scss";
 type TextInputProps = {
   errorMessage?: string;
   handler: Function;
-  InputIcon: IconType;
+  Icon: IconType;
   name: string;
   placeHolder: string;
   type: string;
@@ -17,27 +17,22 @@ type TextInputProps = {
 const TextInput = ({
   errorMessage,
   handler,
-  InputIcon,
+  Icon,
   name,
   placeHolder,
   type,
   value,
 }: TextInputProps) => {
-  const toggleLabel = (e: any) => {
-    console.log(e);
-  };
-
   return (
     <div className="form-controller">
       <div className="form-controller__text-input">
-        {<InputIcon className="icon" />}
+        {<Icon className="icon" />}
         <input
           onChange={(e) => handler(e)}
           name={name}
           placeholder={placeHolder}
           value={value}
           type={type}
-          onFocus={(e) => toggleLabel(e)}
         />
       </div>
       {errorMessage && (
