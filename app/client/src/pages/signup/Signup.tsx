@@ -1,5 +1,4 @@
 import "../../assets/scss/exterior.scss";
-import decoration from "../../assets/images/login-decoration.svg";
 
 // Import Components
 import FormHeader from "../../components/FormHeader/FormHeader";

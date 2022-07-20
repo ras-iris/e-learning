@@ -77,6 +77,19 @@
     align-items: center;
     padding-top: 0;
     width: 60%;
+    justify-content: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wizard {
+      width: 400px;
+      height: 300px;
+    }
   }
 
   .content {
@@ -91,10 +104,18 @@
       width: 300px;
       margin: 0 auto;
     }
+
+    .exterior-step {
+      width: 400px;
+
+      .btn {
+        width: 310px;
+      }
+    }
   }
   .form {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
   }
 }
 

@@ -9,9 +9,9 @@ import StepWizard from "react-step-wizard";
 import ResetStep1 from "./Reset-step1";
 import ResetStep2 from "./Reset-step2";
 import ResetStep3 from "./Reset-step3";
+import ResetStep4 from "./Reset-step4";
 
 const ResetPwd = () => {
-
   return (
     <div className="exterior-page reset-page">
       <div className="left-side">
@@ -26,17 +26,18 @@ const ResetPwd = () => {
       <div className="right-side">
         <div className="content">
           <form onSubmit={(e) => e.preventDefault()}>
-            <FormHeader formHeading="Récupération de mot de passe" formSubHeading="" />
-            <StepWizard className="wizard" >
-              <ResetStep1 nextStep /> 
+            <FormHeader formHeading="Récupération de mot de passe" />
+            <StepWizard className="wizard">
+              <ResetStep1 nextStep />
               <ResetStep2 nextStep />
-              <ResetStep3 />
+              <ResetStep3 nextStep />
+              <ResetStep4 />
             </StepWizard>
           </form>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ResetPwd
+export default ResetPwd;
