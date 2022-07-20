@@ -1,40 +1,44 @@
-import Button from "../../components/Button/Button";
-import { FaGraduationCap } from "react-icons/fa";
 import { useState } from "react";
-import Selector from "../../components/Selector/Selector";
+
+import Button from "../../components/Button/Button";
+import TextInput from "../../components/TextInput/TextInput";
+
+import { FaKey, FaArrowRight } from "react-icons/fa";
 
 const SignupStep2 = ({ nextStep }: { nextStep: any }) => {
-  const [mention, setMention] = useState("")
-  const [Filiere, setFiliere] = useState("")
+  const [newPwd, setNewPwd] = useState("");
+  const [confirmPwd, setConfirmPwd] = useState("");
   return (
     <div className="exterior-step">
-      <p>Choisissez votre filière</p>
-      <Selector
-        label="Mention :"
-        name="mention-select"
-        LabelIcon={<FaGraduationCap />}
-        handler={setMention}
-        placeHolder={"Informatique"}
-        value={mention}
+      <div className="divider"></div>
+      <p className="tip">Entrer votre nouveau mot de passe.</p>
+      <TextInput
+        placeHolder="Nouveau mot de passe"
+        errorMessage=""
+        name="new-pwd"
+        Icon={FaKey}
+        handler={setNewPwd}
+        value={newPwd}
+        type="password"
       />
-  
-      <Selector
-        label="Filière :"
-        name="mention-select"
-        LabelIcon={<FaGraduationCap />}
-        handler={setFiliere}
-        placeHolder={"Informatique"}
-        value={Filiere}
+      <TextInput
+        placeHolder="Confirmer le mot de passe"
+        errorMessage=""
+        name="confirm-pwd"
+        Icon={FaKey}
+        handler={setConfirmPwd}
+        value={confirmPwd}
+        type="password"
       />
 
       <Button
-        className="submit"
         onClick={nextStep}
-        text="Suivant"
-        type="button"
+        text="Inscription"
+        Icon={FaArrowRight}
+        iconPosition="right"
       />
     </div>
-  )
-}
+  );
+};
 
-export default SignupStep2
+export default SignupStep2;

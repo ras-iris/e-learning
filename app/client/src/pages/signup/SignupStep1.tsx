@@ -1,64 +1,58 @@
 import Button from "../../components/Button/Button";
-import { FaEnvelope, FaUserAlt } from "react-icons/fa";
+import { FaEnvelope, FaUserAlt, FaGoogle, FaArrowRight } from "react-icons/fa";
 import TextInput from "../../components/TextInput/TextInput";
 import { useState } from "react";
 
 const SignupStep1 = ({ nextStep }: { nextStep: any }) => {
-  const [email, setEmail] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [firstName, setFirstName] = useState("")
+  const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
   return (
     <div className="exterior-step">
-      {/* <Button
-       text="S'inscrire avec Google"
-       type="button"
-       className="submit purple"
-       onClick={null}
-       icon={ <FaGoogle /> }
-      /> 
+      <Button
+        text="Continuer avec Google"
+        Icon={FaGoogle}
+        onClick={null}
+        variant="purple"
+      />
 
-      <div className="divider"></div>*/}
-
-      <h4>Informations sur vous</h4>
-
+      <div className="divider"></div>
+      <p>Information sur vous</p>
       <TextInput
-        label="Nom"
         placeHolder="Nom"
         errorMessage=""
         name="user-last-name"
-        InputIcon={FaUserAlt}
+        Icon={FaUserAlt}
         handler={setLastName}
         value={lastName}
         type="text"
       />
       <TextInput
-        label="Nom"
         placeHolder="Prénom"
         errorMessage=""
         name="user-first-name"
-        InputIcon={FaUserAlt}
+        Icon={FaUserAlt}
         handler={setFirstName}
         value={firstName}
         type="text"
       />
       <TextInput
-        label="Nom d'utilisateur"
         placeHolder="Adresse email"
         errorMessage="Compte non trouvé"
         name="email"
-        InputIcon={FaEnvelope}
+        Icon={FaEnvelope}
         handler={setEmail}
         value={email}
         type="email"
       />
       <Button
-        text="Choisir une filière"
+        text="Créer un mot de passe"
         onClick={nextStep}
-        type="button"
-        className="submit"
+        Icon={FaArrowRight}
+        iconPosition="right"
       />
     </div>
-  )
-}
+  );
+};
 
-export default SignupStep1
+export default SignupStep1;
